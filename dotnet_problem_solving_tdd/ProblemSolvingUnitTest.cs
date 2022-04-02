@@ -27,18 +27,18 @@ public class ProblemSolvingUnitTest
         Assert.Equal(expectedResult, result);
     }
 
-    // [Fact]
-    // public void GetLongestBinaryGap_Should_Return_Zero_When_Binary_has_No_Gap()
-    // {
-    //     // Arrange
-    //     uint number = 1;
-    //     var expectedResult = 0;
+    [Fact]
+    public void GetLongestBinaryGap_Should_Return_Zero_When_Binary_has_No_Gap()
+    {
+        // Arrange
+        uint number = 1;
+        var expectedResult = 0;
 
-    //     // Act
-    //     var result = _problemSolving.GetLongestBinaryGap(number);
+        // Act
+        var result = _problemSolving.GetLongestBinaryGap(number);
 
-    //     // Assert
-    //     Assert.Equal(expectedResult, result);
-    // }
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
     #endregion Get Longest Binary Gap
 }

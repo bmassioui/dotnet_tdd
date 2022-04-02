@@ -19,6 +19,8 @@ public class ProblemSolving
 
         if (numberAsBinary.Equals("0")) return 1;
 
+        if(!numberAsBinary.Contains("0")) return 0;
+
         return 10;
     }
     #endregion Get Longest Binary Gap
