@@ -163,4 +163,38 @@ public class ProblemSolvingUnitTest
         Assert.Equal(expectedResult, result);
     }
     #endregion Rotate Array K times
+
+    #region Get Frog Jumps
+    [Fact]
+    public void GetFrogJums_Should_Return_Zero_When_From_Equals_To()
+    {
+        // Arrange
+        var from = 10;
+        var to = from;
+        var distance = 30;
+        var expectedResult = 0; // 0 Jumps
+
+        // Act
+        var result = _problemSolving.GetFrogJumps(from, to, distance);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
+     [Fact]
+    public void GetFrogJums_Should_Return_Jumps()
+    {
+        // Arrange
+        var from = 10;
+        var to = 85;
+        var distance = 30;
+        var expectedResult = 3; // 3 Jumbs, 10+30 = 40 ==> 10+30+30 = 70 ==> 10+30+30+30 = 100  which gives 2.5 then needs 3 Jumps
+
+        // Act
+        var result = _problemSolving.GetFrogJumps(from, to, distance);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+    #endregion Get Frog Jumps
 }

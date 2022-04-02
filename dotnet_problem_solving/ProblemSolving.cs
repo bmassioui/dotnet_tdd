@@ -64,4 +64,22 @@ public class ProblemSolving
         return sliceToRotate.Concat(sliceToKeep);
     }
     #endregion Rotate Array K times
+
+    #region Get Frog Jumps
+    /// <summary>
+    /// Calculate Number of Jumps that the frog should do to move from Position `From` to the Position `To`
+    /// </summary>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+    /// <param name="distance"></param>
+    /// <returns></returns>
+    public int GetFrogJumps(int from, int to, int distance)
+    {
+        if (from == to) return 0;
+
+        var jumps = (decimal)(to - from) / distance;
+
+        return (int)Math.Ceiling(jumps);
+    }
+    #endregion Get Frog Jumps
 }
