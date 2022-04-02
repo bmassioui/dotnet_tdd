@@ -1,3 +1,5 @@
+using dotnet_problem_solving.Extensions;
+
 namespace dotnet_problem_solving;
 
 /// <summary>
@@ -13,7 +15,9 @@ public class ProblemSolving
     /// <returns></returns>
     public short GetLongestBinaryGap(uint number)
     {
-        if(number == 0) return 1;
+        var numberAsBinary = number.ToBinary();
+
+        if (numberAsBinary.Equals("0")) return 1;
 
         return 10;
     }
