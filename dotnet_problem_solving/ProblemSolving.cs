@@ -19,13 +19,22 @@ public class ProblemSolving
 
         if (numberAsBinary.Equals("0")) return 1;
 
-        if(!numberAsBinary.Contains("0")) return 0;
+        if (!numberAsBinary.Contains("0")) return 0;
 
-        if(!numberAsBinary.Contains("0")) return 0;
-        
-        var numberAsBinaryGaps = numberAsBinary.Split(new Char[]{'1'}, StringSplitOptions.RemoveEmptyEntries);
+        if (!numberAsBinary.Contains("0")) return 0;
+
+        var numberAsBinaryGaps = numberAsBinary.Split(new Char[] { '1' }, StringSplitOptions.RemoveEmptyEntries);
 
         return numberAsBinaryGaps.Max(gap => gap.Length);
     }
     #endregion Get Longest Binary Gap
+
+    #region Get Unpaired element
+    public int GetUnpairedElement(int[] oddArray)
+    {
+        if (oddArray.Length == default) return oddArray[0];
+
+        return Array.Find(oddArray, element => oddArray.Count(e => e == element) % 2 != 0);
+    }
+    #endregion Get Unpaired element
 }

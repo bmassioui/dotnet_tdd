@@ -56,4 +56,48 @@ public class ProblemSolvingUnitTest
     }
 
     #endregion Get Longest Binary Gap
+
+    #region Get Unpaired element
+    [Fact]
+    public void GetUnpairedElement_Should_Return_1st_Element_When_Array_Has_Only_1element()
+    {
+        // Arrange
+        var oddArray = new int[] { 1 };
+        var expectedResult = 1;
+
+        // Act
+        var result = _problemSolving.GetUnpairedElement(oddArray);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
+    [Fact]
+    public void GetUnpairedElement_Should_Return_Element_That_Has_Zero_Occurence()
+    {
+        // Arrange
+        var oddArray = new int[] { 9, 3, 9, 3, 9, 7, 9 };
+        var expectedResult = 7;
+
+        // Act
+        var result = _problemSolving.GetUnpairedElement(oddArray);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
+    [Fact]
+    public void GetUnpairedElement_Should_Return_Unpaired_Element()
+    {
+        // Arrange
+        var oddArray = new int[] { 9, 3, 9, 3, 9, 7, 9, 3, 7 };
+        var expectedResult = 3;
+
+        // Act
+        var result = _problemSolving.GetUnpairedElement(oddArray);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+    #endregion Get Unpaired element
 }
