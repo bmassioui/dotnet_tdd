@@ -56,7 +56,7 @@ public class ProblemSolving
 
         if (rotateTimes == default) return arrayToRotate;
 
-        if (arrayToRotate.Length + 1 == rotateTimes) return arrayToRotate;
+        if (arrayToRotate.Length == rotateTimes) return arrayToRotate;
 
         var sliceToRotate = arrayToRotate[^rotateTimes..];
         var sliceToKeep = arrayToRotate[..^rotateTimes];
