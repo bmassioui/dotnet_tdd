@@ -12,9 +12,19 @@ public class ProblemSolvingUnitTest
         _problemSolving = new ProblemSolving();
     }
 
+    #region Get Longest Binary Gap
     [Fact]
-    public void Test1()
+    public void GetLongestBinaryGap_Should_Return_One_When_Number_Is_Zero()
     {
+        // Arrange
+        uint number = 0;
+        var expectedResult = 1;
 
+        // Act
+        var result = _problemSolving.GetLongestBinaryGap(number);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
     }
+    #endregion Get Longest Binary Gap
 }
