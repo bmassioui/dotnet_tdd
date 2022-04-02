@@ -13,7 +13,7 @@ public class ProblemSolving
     /// </summary>
     /// <param name="number"></param>
     /// <returns></returns>
-    public short GetLongestBinaryGap(uint number)
+    public int GetLongestBinaryGap(uint number)
     {
         var numberAsBinary = number.ToBinary();
 
@@ -21,7 +21,11 @@ public class ProblemSolving
 
         if(!numberAsBinary.Contains("0")) return 0;
 
-        return 10;
+        if(!numberAsBinary.Contains("0")) return 0;
+        
+        var numberAsBinaryGaps = numberAsBinary.Split(new Char[]{'1'}, StringSplitOptions.RemoveEmptyEntries);
+
+        return numberAsBinaryGaps.Max(gap => gap.Length);
     }
     #endregion Get Longest Binary Gap
 }

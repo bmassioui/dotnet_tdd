@@ -40,5 +40,20 @@ public class ProblemSolvingUnitTest
         // Assert
         Assert.Equal(expectedResult, result);
     }
+
+    [Fact]
+    public void GetLongestBinaryGap_Should_Return_Longest_Gap_In_Binary()
+    {
+        // Arrange
+        uint number = 529;
+        var expectedResult = 4; // 529 to binary is "1000010001", so the longest gap is 4 "0000"
+
+        // Act
+        var result = _problemSolving.GetLongestBinaryGap(number);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
     #endregion Get Longest Binary Gap
 }
