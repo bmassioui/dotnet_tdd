@@ -37,4 +37,31 @@ public class ProblemSolving
         return Array.Find(oddArray, element => oddArray.Count(e => e == element) % 2 != 0);
     }
     #endregion Get Unpaired element
+
+    #region Rotate Array K times
+    /// <summary>
+    /// Rotate an Array K times - by moving last to first
+    /// array = [1,2,3,4]
+    /// 3 time
+    /// [1,2,3,4] => [4,1,2,3] -- 1
+    /// [4,1,2,3] => [3,4,1,2] -- 2
+    /// [3,4,1,2] => [2,3,4,1] -- 3
+    /// </summary>
+    /// <param name="arrayToRotate"></param>
+    /// <param name="rotateTimes"></param>
+    /// <returns></returns>
+    public int[] RotateArray(int[] arrayToRotate, int rotateTimes)
+    {
+        if (arrayToRotate.Length == default || arrayToRotate.Length == 1) return arrayToRotate;
+
+        if (rotateTimes == default) return arrayToRotate;
+
+        if (arrayToRotate.Length + 1 == rotateTimes) return arrayToRotate;
+
+        var sliceToRotate = arrayToRotate[^rotateTimes..];
+        var sliceToKeep = arrayToRotate[..^rotateTimes];
+
+        return sliceToRotate.Concat(sliceToKeep);
+    }
+    #endregion Rotate Array K times
 }
